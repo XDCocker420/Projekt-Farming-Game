@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3ihihig4jn71"]
+
+[ext_resource type="Texture2D" uid="uid://b5alookycpdxd" path="res://assets/map/farmlands_64x64.png" id="1_gtk0e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xcu3e"]
+size = Vector2(58, 70)
+
+[node name="FarmFieldRight" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_gtk0e")
+region_enabled = true
+region_rect = Rect2(450, 460, 58, 52)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xcu3e")

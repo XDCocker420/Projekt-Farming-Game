@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://0y5hanmykn2e"]
+
+[ext_resource type="Script" path="res://scripts/farming/field.gd" id="2_v1j2u"]
+[ext_resource type="PackedScene" uid="uid://gs07mddrega3" path="res://scenes/farming/farmFieldLeft.tscn" id="3_k2eon"]
+[ext_resource type="PackedScene" uid="uid://cri6prl6lptm8" path="res://scenes/farming/farmFieldMiddle.tscn" id="4_a682d"]
+[ext_resource type="PackedScene" uid="uid://d3ihihig4jn71" path="res://scenes/farming/farmFieldRight.tscn" id="5_6lk6o"]
+
+[node name="Field" type="Node2D"]
+
+[node name="FarmFieldLeft" parent="." groups=["fields"] instance=ExtResource("3_k2eon")]
+position = Vector2(-63, 0)
+script = ExtResource("2_v1j2u")
+
+[node name="FarmFieldMiddle" parent="." groups=["fields"] instance=ExtResource("4_a682d")]
+script = ExtResource("2_v1j2u")
+
+[node name="FarmFieldRight" parent="." groups=["fields"] instance=ExtResource("5_6lk6o")]
+position = Vector2(61, 0)
+script = ExtResource("2_v1j2u")

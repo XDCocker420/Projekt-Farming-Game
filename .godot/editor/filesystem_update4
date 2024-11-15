@@ -1,7 +1,10 @@
-res://scripts/data/save_game.gd
-res://scripts/crops/carrot.gd
-res://scripts/farming/crop_manager.gd
 res://scripts/farming/field.gd
+res://scripts/crops/carrot.gd
+res://scripts/characters/player.gd
+res://scripts/data/save_game.gd
+res://scripts/farming/crop_manager.gd
+res://scripts/buildings/basic_house.gd
+res://scripts/buildings/scheune.gd
 res://scenes/maps/game_map.tscn
 res://tiles/green_forest.tres
 res://tiles/beach.tres

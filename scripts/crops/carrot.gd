@@ -14,10 +14,7 @@ func _ready() -> void:
     timer.start()
 
 func _on_timer_timeout() -> void:
-    if state == 2:
-        #queue_free()
-        print('cools')
-    else:
+    if state != 2:
         state += 1
         timer.start()
         

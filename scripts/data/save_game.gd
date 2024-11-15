@@ -9,11 +9,13 @@ const SAVE_FILE_PATH: String = "user://savegame.save"
 # Auto-save interval in seconds
 const AUTO_SAVE_INTERVAL: float = 60.0  # Save every 60 seconds
 
+
 func _ready() -> void:
     # Start the auto-save timer
     start_auto_save_timer()
     # Attempt to load existing game data
     load_game()
+
 
 func save_game() -> void:
     var file = FileAccess.open(SAVE_FILE_PATH, FileAccess.WRITE_READ)
@@ -24,6 +26,7 @@ func save_game() -> void:
         print("Game saved successfully.")
     else:
         print("Failed to save game.")
+
 
 func load_game() -> void:
     var file = FileAccess.open(SAVE_FILE_PATH, FileAccess.READ)
@@ -40,6 +43,7 @@ func load_game() -> void:
     else:
         print("No save file found. Starting new game.")
 
+
 func start_auto_save_timer() -> void:
     var timer = Timer.new()
     timer.wait_time = AUTO_SAVE_INTERVAL
@@ -47,8 +51,10 @@ func start_auto_save_timer() -> void:
     timer.timeout.connect(_on_auto_save_timeout)
     add_child(timer)
 
+
 func _on_auto_save_timeout() -> void:
     save_game()
+
 
 func _notification(what):
     if what == NOTIFICATION_WM_CLOSE_REQUEST:

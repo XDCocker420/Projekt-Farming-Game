@@ -11,9 +11,11 @@ var looking_direction = "down"
 signal interact
 signal interact2
 
+
 func _ready() -> void:
     # Add the player to the "Player" group for identification
     load_state()
+
 
 func _input(event: InputEvent) -> void:
     # Check if the interaction key is pressed
@@ -23,8 +25,10 @@ func _input(event: InputEvent) -> void:
     if event.is_action_pressed("interact2"):
         interact2.emit()
 
+
 func set_selected_crop(crop_name: String) -> void:
     selected_crop = crop_name
+
 
 func _physics_process(delta: float) -> void:
     var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -42,16 +46,19 @@ func _physics_process(delta: float) -> void:
     update_animation(direction)
     move_and_slide()
 
+
 func update_animation(direction: Vector2):
     var animation_type = "walk" if direction.length() > 0 else "idle"
     var animation_name = animation_type + "_" + looking_direction
     sprite.play(animation_name)
+
 
 ## SAVE FUNCTIONS
 func save_state() -> void:
     # Save player's position
     SaveData.data["player"]['pos_x'] = global_position.x
     SaveData.data["player"]['pos_y'] = global_position.y
+
 
 func load_state() -> void:
     # Load player's position
@@ -62,6 +69,7 @@ func load_state() -> void:
             SaveData.data["player"]['pos_x'],
             SaveData.data["player"]['pos_y']
         )
+
 
 func _notification(what):
     if what == NOTIFICATION_WM_CLOSE_REQUEST:
